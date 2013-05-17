@@ -1,0 +1,1 @@
+json.like @photo.like

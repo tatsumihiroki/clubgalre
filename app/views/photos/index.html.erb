@@ -1,0 +1,209 @@
+<%= javascript_include_tag("clubs.js","photos.js") %>
+<style>
+  article, aside, dialog, figure, footer, header,
+  hgroup, menu, nav, section { display: block; }
+</style>
+
+
+<div class="menubtn">MENU ▼</div>
+<nav id="menu" class="togmenu">
+<div id="#"></div>
+<ul>
+<li><a href="#">HOME</a></li><li><a href="#">ABOUT</a></li><li><a href="#">NEWS</a></li><li><a href="#">GALLERY</a></li><li><a href="#myModal" class="css_btn_class" data-toggle="modal">UPLOAD</a></li><li><a href="#">CONTACT</a></li>
+</ul>
+</nav>
+
+
+
+<div id="container">
+
+
+
+<div id="lanking">
+<h1><%= image_tag("lanking_logo.gif") %></h1>
+<ul id="clublanking">
+<% @photolank.each do |photolank| %>
+  <li><%= image_tag(photolank.avatar.url(:medium))  %></li>
+<% end %>
+</ul>
+</div>
+
+
+<div id="main" role="main">
+	<ul id="tiles"></ul>
+	<div id="loader">
+		<div id="loaderCircle">
+
+		</div>
+	</div>
+
+</div>
+
+</div>
+<!--
+<div id="twitter">
+
+<a data-chrome="noheader noborders" width="280" class="twitter-timeline" href="https://twitter.com/search?q=%23clubgal" data-widget-id="326171947245371392"></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+</div>-->
+
+<%= render 'modal' %>
+
+<%= javascript_include_tag "jquery.wookmark.min.js" %>
+<%= javascript_include_tag "bootstrap.min.js" %>
+<%= javascript_include_tag "like.js" %>
+<%= javascript_include_tag "look.js" %>
+
+
+<script type="text/javascript">
+	var handler = null;
+    var page = 1;
+    var isLoading = false;
+    var apiURL = 'http://localhost:3000/photos.json';
+
+    var options = {
+      autoResize: true,
+      container: $('#main'),
+      offset: 5,
+      itemWidth: 210
+    };
+
+    /**
+     * When scrolled all the way to the bottom, add more tiles.
+     */
+    function onScroll(event) {
+      // Only check when we're not still waiting for data.
+      if(!isLoading) {
+        // Check if we're within 100 pixels of the bottom edge of the broser window.
+        var closeToBottom = ($(window).scrollTop() + $(window).height() > $(document).height() - 100);
+        if(closeToBottom) {
+          loadData();
+        }
+      }
+    };
+
+    /**
+     * Refreshes the layout.
+     */
+    function applyLayout() {
+      // Create a new layout handler.
+
+     	 handler = $('#tiles li');
+
+      	$("#tiles li:last img").load(function(){ // Capture scroll event.
+	      	handler.wookmark(options);
+  		});
+
+    };
+
+    /**
+     * Loads data from the API.
+     */
+    function loadData() {
+      isLoading = true;
+      $('#loaderCircle').show();
+
+      $.ajax({
+        url: apiURL,
+        dataType: 'json',
+        data: {page: page}, // Page parameter to make sure we load new data
+        success: onLoadData
+      });
+    };
+
+    /**
+     * Receives data from the API, creates HTML for images and updates the layout
+     */
+    function onLoadData(data) {
+
+
+      isLoading = false;
+      $('#loaderCircle').hide();
+
+      // Increment page index for future calls.
+      page++;
+      // Create HTML for the images.
+      var html = '';
+      var i=0, length=data.photos.length, image;
+      for(; i<length; i++) {
+        image = data.photos[i];
+
+
+
+        html += '<li class="imageBox">';
+       // html += '<li class="imageBox" id="'+image.id'">';
+
+        // Image tag (preview in Wookmark are 200px wide, so we calculate the height based on that).
+
+        html += '<img class="move" src="'+image.avatar_file_name+'" width="200" height="'+Math.round(image.height/image.width*200)+'" data-pos="'+image.id+'">';
+
+
+        // Image title.
+        html += '<p class="picname">'+image.name+'</p>';
+        html += '<div class="piceyemenu">'
+        html += '<div class="picmenu">'
+        html +='<div class="likephoto" data-pos="'+image.id+'"></div>';
+        html += '<div class="likenum">'+image.like+'</div>';
+        html += '</div>'
+        html += '<div class="lookmenu">'
+        html +='<div class="lookphoto" data-pos="'+image.id+'"></div>';
+        html += '<div class="looknum">'+image.look+'</div>';
+        html += '</div>'
+        html += '</div>'
+        html += '<p class="prefecture">'+image.prefecture+'</p>';
+        html += '</li>';
+
+      }
+
+      // Add image HTML to the page.
+      $('#tiles').append(html);
+
+      // Apply layout.
+      applyLayout();
+
+     /* $("span").on("click",function(){
+
+         });*/
+
+    };
+
+
+    $(document).ready(new function() {
+
+      $(".menubtn").click(function(){
+        $("#menu").toggleClass('togmenu');
+      });
+
+
+      	$(document).bind('scroll', onScroll);
+
+      	loadData();
+
+        $(document).on("click",".likephoto",function(e){
+
+           console.log($(this));
+
+           var likeparams=$(this).attr("data-pos");
+
+           clicklike(likeparams,$(this).next(),$(this))
+
+
+            $(this).attr('class','disabled');
+          // console.log($(this).next().text());
+        })
+
+        $(document).on("click",".move",function(e){
+           var lookparams=$(this).attr("data-pos");
+
+           clicklook(lookparams)
+
+          //console.log($(this).next().text());
+        })
+
+
+
+    });
+</script>
+
+

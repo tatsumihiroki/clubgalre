@@ -1,0 +1,285 @@
+// Place all the styles related to the photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**
+ * Grid container
+ */
+
+body{
+	background: url("backgroundimage.png");
+}
+.togmenu {
+	display:none;
+}
+.menubtn {
+	padding: 16px 20px;
+	background:#D93030;
+	color: #fff;
+}
+#menu ul {
+	width:100%;
+	position: fixed;
+	z-index: 998;
+	margin: 0;
+	padding: 0;
+	background:#D93030;
+}
+#menu li {
+	list-style: none;
+	border-top: 2px solid #fff;
+}
+#menu li a {
+	border-left: 1px solid #CB2A2A;
+	padding: 16px 50px;
+	display:block;
+	text-decoration:none;
+	background:#D93030;
+	color: #fff;
+}
+@media only screen and (min-width: 800px) {
+	.menubtn {
+		display:none;
+	}
+	.togmenu {
+		display:block;
+	}
+	#menu li {
+		display: inline-block;
+		border:none;
+	}
+}
+
+#menu{
+	height:60px;
+}
+
+#logo{
+	float:left;
+	margin-top:2px;
+	width:10px;
+	height:45px;
+}
+
+
+#toukou{
+	background-image: url("photouploader.png");
+	text-indent:-9999px;
+	background-repeat: no-repeat;
+	display:block;
+	height:45px;
+	width:90px;
+}
+
+.picname{
+	width:50px;
+	background:#fff;
+	border-radius:2px;
+	color:#fff;
+	z-index:997;
+	position:absolute;
+	left:3px;
+	top:10px;
+	padding:2px 2px 1px 1px;
+}
+
+.prefecture{
+	-webkit-box-shadow: 0 1px 0px 0px white inset;
+	-moz-box-shadow: 0 1px 0px 0px white inset;
+	box-shadow: 0 1px 0px 0px white inset;
+	border-radius: 0 0 3px 3px;
+	padding: 7px 8px 8px;
+	border-top: 1px solid #e7e7e7;
+	background-color: #f6f6f6;
+	position: relative;
+	color:#fff;
+}
+
+#clublanking li{
+	float:left;
+	list-style-type: none;
+	width:200px;
+	height:200px;
+	margin-left:60px;
+}
+
+
+#clublanking li img{
+	width:200px;
+	height:200px;
+}
+#lanking ul{
+	margin-right:auto;
+	margin-left:auto;
+	width:70%;
+}
+
+#lanking{
+	height:300px;
+	margin-left: auto;
+	margin-right: auto;
+	h1{
+	margin-left:100px;
+	}
+}
+.move{
+	background: #ccc;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	margin-bottom:10px;
+}
+
+
+.piceyemenu{
+	width:90px;
+	height:22px;
+}
+
+/**
+ * pic-like menu
+ */
+
+.picmenu{
+	float:left;
+	width:43px;
+	height:22px;
+	margin-bottom:8px;
+}
+.likenum{
+	color:#666;
+	width:20px;
+	height:20px;
+	float:right;
+	margin-bottom:2px;
+}
+.likephoto{
+	margin-top:4px;
+   float:left;
+   height:18px;
+   width:20px;
+	background-image: url("hert.png");
+	background-repeat: no-repeat;
+}
+
+.disabled{
+	margin-top:4px;
+   float:left;
+   height:18px;
+   width:20px;
+	background-image: url("hertover.png");
+	background-repeat: no-repeat;
+}
+/**
+ * pic-look menu
+ */
+.lookmenu{
+	float:right;
+	width:46px;
+	height:22px;
+	margin-bottom:8px;
+}
+.looknum{
+	color:#666;
+	width:20px;
+	height:20px;
+	float:right;
+}
+.lookphoto{
+   margin-top:3px;
+   float:left;
+   height:16px;
+   width:22px;
+	background-image: url("eye.png");
+	background-repeat: no-repeat;
+}
+
+
+#menu h1{
+	margin-top:10px;
+	margin-left:30px;
+}
+
+#twitter{
+width:210px;
+height:200px;
+position: fixed;
+z-index: 999;
+right: 0;
+top: 0;
+bottom: 0;
+}
+
+#tiles {
+list-style-type: none;
+position: relative; /** Needed to ensure items are laid out relative to this container **/
+margin: 0;
+}
+
+/**
+ * Grid items
+ */
+#tiles li {
+box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+width: 200px;
+background-color: #ffffff;
+border:1px solid #dedede;
+-moz-border-radius: 7px;
+-webkit-border-radius: 7px;
+border-radius: 7px;
+display: none; /** Hide items initially to avoid a flicker effect **/
+cursor: pointer;
+padding: 4px;
+}
+
+#tiles li img {
+display: block;
+}
+
+/**
+ * Grid item text
+ */
+
+/** General page styling **/
+
+#tiles li p {
+color: #666;
+font-size: 11px;
+line-height: 16px;
+}
+
+
+header h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 10px 0 3px 0;
+    font-weight: 100;
+    line-height: 50px;
+    text-transform: lowercase;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+
+header p {
+text-align: center;
+font-size: 13px;
+color: #777;
+margin: 0;
+}
+
+
+/** Loader **/
+
+#loader {
+  height: 16px;
+  text-align: center;
+  padding: 25px 0 25px 0;
+}
+
+#loaderCircle {
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  background-image: url(loading.gif);
+}
+

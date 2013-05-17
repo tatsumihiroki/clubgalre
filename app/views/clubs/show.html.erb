@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @club.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @club.description %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @club.place_id %>
+</p>
+
+<p>
+  <b>Del flg:</b>
+  <%= @club.del_flg %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @club.image_url %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @club.updated_at %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @club.created_at %>
+</p>
+<p>
+  <b> Logo:</b>
+  <%= image_tag(@club.avatar)  %>
+</p>
+
+<%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %>

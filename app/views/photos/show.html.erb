@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @photo.name %>
+</p>
+
+<p>
+  <b>Club:</b>
+  <%= @photo.club_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @photo.description %>
+</p>
+
+<p>
+  <b>Del flg:</b>
+  <%= @photo.del_flg %>
+</p>
+
+<p>
+  <b>Tweet tag:</b>
+  <%= @photo.tweet_tag %>
+</p>
+
+<p>
+  <b>User token:</b>
+  <%= @photo.user_token %>
+</p>
+<b> Logo:</b>
+  <%= image_tag(@photo.avatar)  %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @photo.updated_at %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @photo.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

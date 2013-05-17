@@ -1,0 +1,63 @@
+<div id="myModal" class="modal hide fade">
+<div class="modal-header">
+	<a href="/photos" class="close" data-dismiss="modal">&times;</a>
+	<h3>Photo UP</h3>
+</div>
+<div class="modal-body">
+<%= form_for(@photo) do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :club_id %><br />
+    <%= f.number_field :club_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :del_flg %><br />
+    <%= f.number_field :del_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :tweet_tag %><br />
+    <%= f.text_field :tweet_tag %>
+  </div>
+  <div class="field">
+    <%= f.label :user_token %><br />
+    <%= f.text_field :user_token %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_at %><br />
+    <%= f.date_select :updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at %><br />
+    <%= f.date_select :created_at %>
+  </div>
+  <div class="field">
+         <%= f.label :photo %><br />
+          <%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit"OK" %>
+  </div>
+<% end %>
+</div>
+<!--<div class="modal-footer">
+	<a href="#" class="btn" id>OK</a>
+</div>-->
+</div>

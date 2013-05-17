@@ -1,0 +1,1 @@
+json.look @photo.look
