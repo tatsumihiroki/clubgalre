@@ -55,7 +55,6 @@
 <%= javascript_include_tag "like.js" %>
 <%= javascript_include_tag "look.js" %>
 
-
 <script type="text/javascript">
 	var handler = null;
     var page = 1;
@@ -73,6 +72,7 @@
      * When scrolled all the way to the bottom, add more tiles.
      */
     function onScroll(event) {
+
       // Only check when we're not still waiting for data.
       if(!isLoading) {
         // Check if we're within 100 pixels of the bottom edge of the broser window.
@@ -80,6 +80,8 @@
         if(closeToBottom) {
           loadData();
         }
+
+
       }
     };
 
@@ -136,7 +138,7 @@
 
         // Image tag (preview in Wookmark are 200px wide, so we calculate the height based on that).
 
-        html += '<img class="move" src="'+image.avatar_file_name+'" width="200" height="'+Math.round(image.height/image.width*200)+'" data-pos="'+image.id+'">';
+        html += '<a href="'+image.avatar_file_name+'"  rel="lightbox" title="my caption"><img class="move" src="'+image.avatar_file_name+'" width="200" height="'+Math.round(image.height/image.width*200)+'" data-pos="'+image.id+'"></a>';
 
 
         // Image title.

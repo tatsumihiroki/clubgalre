@@ -22,7 +22,7 @@ function clicklook(lookparams){
 
 
 function lookplus(data){
-	alert(data);
+	//alert(data);
   // $(clicklistid).text(data);
 
 
