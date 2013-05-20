@@ -1,4 +1,5 @@
 <%= javascript_include_tag("clubs.js","photos.js") %>
+
 <style>
   article, aside, dialog, figure, footer, header,
   hgroup, menu, nav, section { display: block; }
@@ -138,7 +139,7 @@
 
         // Image tag (preview in Wookmark are 200px wide, so we calculate the height based on that).
 
-        html += '<a href="'+image.avatar_file_name+'"  rel="lightbox" title="my caption"><img class="move" src="'+image.avatar_file_name+'" width="200" height="'+Math.round(image.height/image.width*200)+'" data-pos="'+image.id+'"></a>';
+        html += '<img class="move" src="'+image.avatar_file_name+'" width="200" height="'+Math.round(image.height/image.width*200)+'" data-pos="'+image.id+'">';
 
 
         // Image title.
@@ -173,12 +174,15 @@
     };
 
 
+
+
     $(document).ready(new function() {
+
+
 
       $(".menubtn").click(function(){
         $("#menu").toggleClass('togmenu');
       });
-
 
       	$(document).bind('scroll', onScroll);
 
