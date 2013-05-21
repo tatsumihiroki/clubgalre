@@ -16,8 +16,12 @@ body{
 	padding: 16px 20px;
 	background:#D93030;
 	color: #fff;
+	filter: alpha(opacity=87);
+   -moz-opacity:0.87;
+   opacity:0.87;
 }
 #menu ul {
+	height:46px;
 	width:100%;
 	position: fixed;
 	z-index: 998;
@@ -34,7 +38,7 @@ body{
 }
 #menu li a {
 	border-left: 1px solid #CB2A2A;
-	padding: 16px 40px;
+	padding: 12px 40px;
 	display:block;
 	text-decoration:none;
 	background:#D93030;
