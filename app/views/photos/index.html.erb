@@ -1,4 +1,4 @@
-<%= javascript_include_tag("clubs.js","photos.js") %>
+<%= javascript_include_tag("clubs.js","photos.js","jquery.flexslider-min.js") %>
 
 <style>
   article, aside, dialog, figure, footer, header,
@@ -13,6 +13,23 @@
 <li><a href="#">HOME</a></li><li><a href="#">ABOUT</a></li><li><a href="#">NEWS</a></li><li><a href="#">GALLERY</a></li><li><a href="#myModal" class="css_btn_class" data-toggle="modal">UPLOAD</a></li><li><a href="#">CONTACT　US</a></li>
 </ul>
 </nav>
+
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <%= image_tag("zeebra.jpg") %>
+    </li>
+    <li>
+      <%= image_tag("zeebra.jpg") %>
+    </li>
+    <li>
+      <%= image_tag("zeebra.jpg") %>
+    </li>
+    <li>
+      <%= image_tag("zeebra.jpg") %>
+    </li>
+  </ul>
+</div>
 
 
 
@@ -178,7 +195,9 @@
 
     $(document).ready(new function() {
 
-
+      $('.flexslider').flexslider({
+    animation: "slide"
+     });
 
       $(".menubtn").click(function(){
         $("#menu").toggleClass('togmenu');
