@@ -74,8 +74,30 @@ body{
 	width:90px;
 }
 
-.picname{
+ .flexslider {
+  		width:80%;
+  		margin:0 auto;
+	}
 
+#main{
+	width:80%;
+	margin:0 auto;
+}
+
+@media screen and (max-width: 960px) {
+  .flexslider {
+  		width:100%;
+	}
+}
+
+@media screen and (max-width: 960px) {
+  #main{
+  	width:100%;
+  }
+}
+
+
+.picname{
 	width:50px;
 	background:#fff;
 	border-radius:2px;
