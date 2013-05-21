@@ -9,20 +9,10 @@
 body{
 	background: url("backgroundimage.png");
 }
-.togmenu {
-	display:none;
-}
-.menubtn {
-
-	padding: 16px 20px;
-	background:#D93030;
-	color: #fff;
-	filter: alpha(opacity=87);
-   -moz-opacity:0.87;
-   opacity:0.87;
-}
-#menu ul {
+.togmenu{
 	height:46px;
+	display:none;
+	background:#D93030;
 	width:100%;
 	position: fixed;
 	z-index: 998;
@@ -33,22 +23,39 @@ body{
    -moz-opacity:0.87;
    opacity:0.87;
 }
+.menubtn {
+	padding: 16px 20px;
+	background:#D93030;
+	color: #fff;
+	filter: alpha(opacity=87);
+   -moz-opacity:0.87;
+   opacity:0.87;
+}
+
 #menu li {
 	list-style: none;
 	border-top: 2px solid #fff;
 }
-#menu li a {
 
+#menu li a {
 	border-left: 1px solid #CB2A2A;
-	padding: 12px 40px;
+	padding: 14px 40px;
 	display:block;
 	text-decoration:none;
 	background:#D93030;
 	color: #fff;
 }
 @media only screen and (min-width: 800px) {
-	#menu ul{
-
+	#menu ul {
+		height:46px;
+		width:78%;
+		margin: 0 auto;
+		z-index: 999;
+		padding: 0;
+		background:#D93030;
+		filter: alpha(opacity=87);
+  		-moz-opacity:0.87;
+   		opacity:0.87;
 	}
 	.menubtn {
 		display:none;
@@ -62,9 +69,7 @@ body{
 	}
 }
 
-#menu{
-	height:60px;
-}
+
 
 #logo{
 	float:left;
