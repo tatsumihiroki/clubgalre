@@ -17,12 +17,12 @@
 	z-index: 998;
 	margin: 0;
 	padding: 0;
-	background:#D93030;
+	background:#f3645c;
 
 }
 .menubtn {
 	padding: 16px 20px;
-	background:#D93030;
+	background:#f3645c;
 	color: #fff;
 }
 
@@ -32,11 +32,11 @@
 }
 
 #menu li a {
-	border-left: 1px solid #CB2A2A;
+	border-left: 1px solid #DD5951;
 	padding: 14px 40px;
 	display:block;
 	text-decoration:none;
-	background:#D93030;
+	background:#f3645c;
 	color: #fff;
 }
 @media only screen and (min-width: 800px) {
@@ -46,7 +46,7 @@
 		margin: 0 auto;
 		z-index: 999;
 		padding: 0;
-		background:#D93030;
+		background:#f3645c;
 		filter: alpha(opacity=87);
   		-moz-opacity:0.87;
    		opacity:0.87;
