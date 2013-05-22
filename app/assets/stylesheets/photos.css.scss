@@ -176,68 +176,59 @@ body{
 
 
 .piceyemenu{
-	width:90px;
-	height:22px;
-}
+	width: 100%;
+	height:28px;
 
-/**
- * pic-like menu
- */
 
-.picmenu{
-	float:left;
-	width:43px;
-	height:22px;
-	margin-bottom:8px;
-}
-.likenum{
-	color:#666;
-	width:20px;
-	height:20px;
-	float:right;
-	margin-bottom:2px;
-}
-.likephoto{
-	margin-top:4px;
-   float:left;
-   height:18px;
-   width:20px;
-	background-image: url("hert.png");
-	background-repeat: no-repeat;
-}
+	/**
+	 * pic-like menu
+	 */
 
-.disabled{
-	margin-top:4px;
-   float:left;
-   height:18px;
-   width:20px;
-	background-image: url("hertover.png");
-	background-repeat: no-repeat;
-}
-/**
- * pic-look menu
- */
-.lookmenu{
-	float:right;
-	width:46px;
-	height:22px;
-	margin-bottom:8px;
-}
-.looknum{
-	color:#666;
-	width:20px;
-	height:20px;
-	float:right;
-}
-.lookphoto{
-   margin-top:3px;
-   float:left;
-   height:16px;
-   width:22px;
-	background-image: url("eye.png");
-	background-repeat: no-repeat;
-}
+	.picmenu {
+		float: left;
+		height: 28px;
+		line-height: 28px;
+	}
+	.likephoto {
+		height: 24px;
+		width: 24px;
+		line-height: 24px;
+		color: #f3645c;
+		font-size: 1.25em;
+	}
+	.likenum{
+		color: #666;
+		height: 24px;
+		line-height: 24px;
+	}
+	.disabled {
+		height: 24px;
+		width: 24px;
+		line-height: 24px;
+		color: #3b3b3b;
+	}
 
+	/**
+	 * pic-look menu
+	 */
+	.lookmenu {
+		float: left;
+		height: 28px;
+		line-height: 28px;
+	}
+	.lookphoto {
+		height: 24px;
+		width: 24px;
+		line-height: 24px;
+		color: #f3645c;
+		font-size: 1.25em;
+	}
+	.looknum{
+		color: #666;
+		height: 24px;
+		line-height: 24px;
+	}
+}
 
 #menu h1{
 	margin-top:10px;

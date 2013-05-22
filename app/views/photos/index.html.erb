@@ -165,12 +165,12 @@
         html += '<div class="menu">';
         html += '<div class="piceyemenu">';
         html += '<div class="picmenu">';
-        html +='<div class="likephoto" data-pos="'+image.id+'"></div>';
-        html += '<div class="likenum">'+image.like+'</div>';
+        html += '<span class="likephoto typcn" data-pos="'+image.id+'"></span>';
+        html += '<span class="likenum">'+image.like+'</span>';
         html += '</div>';
         html += '<div class="lookmenu">';
-        html +='<div class="lookphoto" data-pos="'+image.id+'"></div>';
-        html += '<div class="looknum">'+image.look+'</div>';
+        html += '<span class="lookphoto typcn" data-pos="'+image.id+'"></span>';
+        html += '<span class="looknum">'+image.look+'</span>';
         html += '</div>';
         html += '</div>';
         html += '</div>';
@@ -216,7 +216,7 @@
            clicklike(likeparams,$(this).next(),$(this))
 
 
-            $(this).attr('class','disabled');
+            $(this).addClass('disabled');
           // console.log($(this).next().text());
         })
 
