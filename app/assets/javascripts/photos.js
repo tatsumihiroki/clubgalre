@@ -82,7 +82,7 @@ function onLoadData(data) {
 			+	'<div class="menu">'
 			+	'<div class="piceyemenu">'
 			+	'<div class="picmenu">'
-			+	'<span class="likephoto typcn" data-pos="<%= image.id %>"></span>'
+			+	'<span class="likephoto typcn" data-pos="<%= image.id %>"></span>'
 			+	'<span class="likenum"><%= image.like %></span>'
 			+	'</div>'
 			+	'<div class="lookmenu">'
