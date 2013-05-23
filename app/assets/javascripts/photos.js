@@ -75,7 +75,7 @@ function onLoadData(data) {
 		var tmpl = _.template(
 				'<li class="imageBox">'
 			+	'<figure>'
-			+	'<img class="move" src="<%= filename %>" width="200" height="<%= imageh %>" data-pos="<%= id %>">'
+			+	'<img class="move" src="<%= filename %>" width="200" data-pos="<%= id %>">'
 			+	'<figcaption>'
 			+	'</figcaption>'
 			+	'</figure>'
@@ -104,7 +104,6 @@ function onLoadData(data) {
 			tmpl({
 			'id'      : image.id
 			, 'filename': image.avatar_file_name
-			, 'imageh'  : Math.round(image.height/image.width*200)
 			, 'name'    : image.name
 			, 'pref'    : image.prefecture
 			, 'like'    : image.like
