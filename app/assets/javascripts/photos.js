@@ -66,60 +66,43 @@ function onLoadData(data) {
 	var html = ''
 	,	i = 0
 	,	length = data.photos.length
-	,	image;
-
-	for(; i<length; i++) {
-
-		image = data.photos[i];
-
-		var tmpl = _.template(
-				'<li class="imageBox">'
+	,	image
+	,	tmpl = '<% _.each(data, function(image) { %> '
+			+	'<li class="imageBox">'
 			+	'<figure>'
-			+	'<img class="move" src="<%= filename %>" width="200" height="<%= imageh %>" data-pos="<%= id %>">'
+			+	'<img class="move" src="<%= image.avatar_file_name %>" width="200" data-pos="<%= image.id %>">'
 			+	'<figcaption>'
 			+	'</figcaption>'
 			+	'</figure>'
-			+	'<p class="picname"><%= name %></p>'
+			+	'<p class="picname"><%= image.name %></p>'
 			+	'<div class="prefecturemenu">'
-			+	'<span class="prefectureaic typcn" data-pos="<%= id %>"></span>'
-			+	'<p class="prefecture"><%= pref %></p>'
+			+	'<span class="prefectureaic typcn" data-pos="<%= image.id %>"></span>'
+			+	'<p class="prefecture"><%= image.prefecture %></p>'
 			+	'</div>'
 			+	'<div class="menu">'
 			+	'<div class="piceyemenu">'
 			+	'<div class="picmenu">'
-			+	'<span class="likephoto typcn" data-pos="<%= id %>"></span>'
-			+	'<span class="likenum"><%= like %></span>'
+			+	'<span class="likephoto typcn" data-pos="<%= image.id %>"></span>'
+			+	'<span class="likenum"><%= image.like %></span>'
 			+	'</div>'
 			+	'<div class="lookmenu">'
-			+	'<span class="lookphoto typcn" data-pos="<%= id %>"></span>'
-			+	'<span class="looknum"><%= look %></span>'
+			+	'<span class="lookphoto typcn" data-pos="<%= image.id %>"></span>'
+			+	'<span class="looknum"><%= image.look %></span>'
 			+	'</div>'
 			+	'</div>'
 			+	'</div>'
-			+	'</li>'
-		);
+			+	'</li><% }); %>';
 
-		// Add image HTML to the page.
-		$('#tiles').append(
-			tmpl({
-			'id'      : image.id
-			, 'filename': image.avatar_file_name
-			, 'imageh'  : Math.round(image.height/image.width*200)
-			, 'name'    : image.name
-			, 'pref'    : image.prefecture
-			, 'like'    : image.like
-			, 'look'    : image.look
-			}));
-		}
+	// Add image HTML to the page.
+	$('#tiles').append(_.template(tmpl, {data: data.photos}));
 
-		// Apply layout.
-		applyLayout();
+	// Apply layout.
+	applyLayout();
 
-		/* $("span").on("click",function(){
+	/* $("span").on("click",function(){
 
-		});*/
-
-	};
+	});*/
+};
 
 $(document).ready(new function() {
 
