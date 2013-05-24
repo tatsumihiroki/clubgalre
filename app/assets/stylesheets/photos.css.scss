@@ -2,10 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+header {
+	h1 {
+	    margin: 10px 0 3px 0;
+	    text-align: center;
+	    font-size: 24px;
+	    font-weight: normal;
+	    line-height: 46px;
+	    text-transform: lowercase;
+	    color: inherit;
+	    text-rendering: optimizelegibility;
+	}
+
+	p {
+		margin: 0;
+		text-align: center;
+		font-size: 13px;
+		color: #777;
+	}
+}
+
 /**
  * Grid container
  */
-
 
 .togmenu{
 	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
@@ -19,38 +39,56 @@
 	padding: 0;
 	background:#f3645c;
 }
+
 .menubtn {
 	padding: 16px 20px;
 	background:#f3645c;
 	color: #fff;
 }
 
-#menu li {
-	list-style: none;
-	border-top: 2px solid #fff;
+#menu {
+
+	h1 {
+		margin-top:10px;
+		margin-left:30px;
+	}
+
+	li {
+		list-style: none;
+		border-top: 2px solid #fff;
+
+		a {
+			display: block;
+			padding: 0px 40px;
+			font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+			border-left: 1px solid #DD5951;
+			line-height: 40px;
+			text-decoration: none;
+			background: #f3645c;
+			color: #fff;
+		}
+	}
 }
 
-#menu li a {
-	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-	border-left: 1px solid #DD5951;
-	line-height:40px;
-	padding: 0px 40px;
-	display:block;
-	text-decoration:none;
-	background:#f3645c;
-	color: #fff;
-}
 @media only screen and (min-width: 800px) {
-	#menu ul {
-		height:40px;
-		width:84%;
-		margin: 0 auto;
-		z-index: 999;
-		padding: 0;
-		background:#f3645c;
-		filter: alpha(opacity=87);
-  		-moz-opacity:0.87;
-   		opacity:0.87;
+
+	#menu {
+		ul {
+			height:40px;
+			width:84%;
+			margin: 0 auto;
+			z-index: 999;
+			padding: 0;
+			background:#f3645c;
+			filter: alpha(opacity=87);
+	  		-moz-opacity:0.87;
+	   		opacity:0.87;
+
+			li {
+				display: inline-block;
+				border:none;
+			}
+		}
 	}
 	.menubtn {
 		display:none;
@@ -58,21 +96,14 @@
 	.togmenu {
 		display:block;
 	}
-	#menu li {
-		display: inline-block;
-		border:none;
-	}
 }
 
-
-
-#logo{
+#logo {
 	float:left;
 	margin-top:2px;
 	width:10px;
 	height:45px;
 }
-
 
 #toukou{
 	background-image: url("photouploader.png");
@@ -83,31 +114,27 @@
 	width:90px;
 }
 
- .flexslider {
+.flexslider {
   		width:1150px;
   		margin:0 auto 100px auto;
 	}
 
-#main{
+#main {
 	width:1170px;
 	margin:0 auto;
 }
 
 @media screen and (max-width: 800px) {
-  .flexslider {
-  		width:100%;
+	.flexslider {
+		width:100%;
 	}
 	#menu li a{
 		padding: 16px 20px;
 	}
+	#main{
+		width:100%;
+	}
 }
-
-@media screen and (max-width: 800px) {
-  #main{
-  	width:100%;
-  }
-}
-
 
 .picname{
 	font-size: 11px;
@@ -115,8 +142,6 @@
 	background:#fff;
 	padding:4px 6px 4px;
 }
-
-
 
 .prefecturemenu{
 	height:24px;
@@ -165,7 +190,7 @@
 }
 
 
-#clublanking li img{
+#clublanking li img {
 	width:200px;
 	height:200px;
 }
@@ -189,11 +214,9 @@
 	width:196px;
 }
 
-
-.piceyemenu{
+.piceyemenu {
 	width: 100%;
 	height:28px;
-
 
 	/**
 	 * pic-like menu
@@ -211,7 +234,7 @@
 		color: #f3645c;
 		font-size: 1.25em;
 	}
-	.likenum{
+	.likenum {
 		font-size: 11px;
 		color: #666;
 		height: 24px;
@@ -247,76 +270,50 @@
 	}
 }
 
-#menu h1{
-	margin-top:10px;
-	margin-left:30px;
-}
-
-#twitter{
-width:210px;
-height:200px;
-position: fixed;
-z-index: 999;
-right: 0;
-top: 0;
-bottom: 0;
+#twitter {
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width:210px;
+	height:200px;
+	z-index: 999;
 }
 
 #tiles {
-list-style-type: none;
-position: relative; /** Needed to ensure items are laid out relative to this container **/
-margin: 0;
+	position: relative; /** Needed to ensure items are laid out relative to this container **/
+	margin: 0;
+	list-style-type: none;
+
+	/**
+	 * Grid items
+	 */
+	li {
+
+		-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+		   -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+		        box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+		background-color: #ffffff;
+		border:1px solid #dedede;
+		display: none; /** Hide items initially to avoid a flicker effect **/
+		cursor: pointer;
+		padding: 10px ;
+
+		img {
+			display: block;
+		}
+
+		/**
+		 * Grid item text
+		 */
+
+		/** General page styling **/
+
+		p {
+			line-height: 24px;
+		}
+	}
 }
-
-/**
- * Grid items
- */
-#tiles li {
-
--webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
--moz-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
-background-color: #ffffff;
-border:1px solid #dedede;
-display: none; /** Hide items initially to avoid a flicker effect **/
-cursor: pointer;
-padding: 10px ;
-}
-
-#tiles li img {
-display: block;
-}
-
-/**
- * Grid item text
- */
-
-/** General page styling **/
-
-#tiles li p {
-line-height: 24px;
-}
-
-
-header h1 {
-    text-align: center;
-    font-size: 24px;
-    font-weight: normal;
-    margin: 10px 0 3px 0;
-    font-weight: 100;
-    line-height: 46px;
-    text-transform: lowercase;
-    color: inherit;
-    text-rendering: optimizelegibility;
-}
-
-header p {
-text-align: center;
-font-size: 13px;
-color: #777;
-margin: 0;
-}
-
 
 /** Loader **/
 
