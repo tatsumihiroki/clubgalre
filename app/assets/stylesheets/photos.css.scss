@@ -336,10 +336,11 @@ header {
 		   -moz-transition: all 0.4s ease;
 		     -o-transition: all 0.4s ease;
 	}
-
-	figure:hover figcaption {
+		figure:hover figcaption {
 		bottom: 0%;
+
 	}
+
 }
 
 /** Loader **/
