@@ -338,7 +338,6 @@ header {
 	}
 		figure:hover figcaption {
 		bottom: 0%;
-
 	}
 
 }
@@ -358,30 +357,6 @@ header {
 	background-image: url(loading.gif);
 }
 
-/** modal **/
-.modal-header{
-	background: rgba(243, 100, 92, 0.75);
-	color: white;
-	h3{
-		text-align:center;
-	}
-}
-
-.field{
-	margin:0 auto;
-	label{
-		text-align:center;
-	}
-	input{
-		width:100%;
-	}
-	textarea{
-		width:100%;
-	}
-	.actions input{
-		text-align:center;
-	}
-}
 
 
 
