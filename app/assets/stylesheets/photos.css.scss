@@ -151,8 +151,8 @@ header {
 	line-height: 24px;
 
 	.prefectureaic {
-		height: 24px;
 		width: 24px;
+		height: 24px;
 		line-height: 24px;
 		color: #f3645c;
 		font-size: 1.25em;
@@ -196,8 +196,8 @@ header {
 }
 
 #lanking {
-	height:300px;
 	margin: 0 auto;
+	height:300px;
 
 	h1 {
 		margin-left:100px;
@@ -321,6 +321,10 @@ header {
 		display: block; 
 		position: relative; 
 		overflow: hidden; 
+
+		&:hover figcaption {
+			left: 0;
+		}
 	}
 
 	figcaption { 
@@ -336,10 +340,6 @@ header {
 		-webkit-transition: all 0.4s ease;
 		   -moz-transition: all 0.4s ease;
 		     -o-transition: all 0.4s ease;
-	}
-
-	figure:hover figcaption {
-		left: 0;
 	}
 }
 
