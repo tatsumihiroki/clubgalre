@@ -69,7 +69,7 @@ function onLoadData(data) {
 	,	image
 	,	tmpl = '<% _.each(data, function(image) { %> '
 			+	'<li class="imageBox">'
-			+	'<figure>'
+			+	'<figure class="imagemodal">'
 			+	'<img class="move" src="<%= image.avatar_file_name %>" width="200" data-pos="<%= image.id %>">'
 			+	'<figcaption><%= image.name %>'
 			+	'</figcaption>'
@@ -106,9 +106,9 @@ function onLoadData(data) {
 
 $(document).ready(new function() {
 
-	$('.flexslider').flexslider({
+	/*$('.flexslider').flexslider({
 		animation: "slide"
-	});
+	});*/
 
 	$(".menubtn").click(function() {
 		$("#menu").toggleClass('togmenu');
@@ -135,6 +135,10 @@ $(document).ready(new function() {
 		var lookparams=$(this).attr("data-pos");
 
 		clicklook(lookparams)
+
+		$("#glayLayer").show()
+    	$("#overLayer").show().html("<img src='"+$(this).attr("src")+"' />")
+
 
 		//console.log($(this).next().text());
 	});
