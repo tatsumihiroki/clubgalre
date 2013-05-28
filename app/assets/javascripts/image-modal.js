@@ -5,6 +5,4 @@ $(function(){
         $(this).hide()
         $("#overLayer").hide()
     })
-
-
 })

@@ -127,7 +127,7 @@ $(document).ready(new function() {
 			clicklike(likeparams,$(this).next(),$(this))
 
 			$(this).addClass('disabled');
-			// console.log($(this).next().text());
+
 			});
 
 	$(document).on("click",".move",function(e) {
@@ -137,9 +137,7 @@ $(document).ready(new function() {
 		clicklook(lookparams)
 
 		$("#glayLayer").show()
-    	$("#overLayer").show().html("<img src='"+$(this).attr("src")+"' />")
+		$("#overLayer").show().html("<img src='"+$(this).attr("src")+"' />")
 
-
-		//console.log($(this).next().text());
 	});
 });
