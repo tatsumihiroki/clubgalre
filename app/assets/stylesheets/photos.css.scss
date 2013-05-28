@@ -125,6 +125,13 @@ header {
 	margin: 0 auto;
 }
 
+
+#howtouse{
+	height:683px;
+	width: 1150px;
+	margin: 0 auto 100px;
+}
+
 @media screen and (max-width: 800px) {
 	.flexslider {
 		width:100%;
@@ -135,17 +142,15 @@ header {
 	#main {
 		width:100%;
 	}
+	#howtouse {
+		width:100%;
+	}
+
 }
 
 
 /* How to Use */
 
-#howtouse{
-	height:683px;
-	width: 1150px;
-	margin: 0 auto 100px;
-	background-image: url("howtouse.png");
-}
 
 
 
