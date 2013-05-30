@@ -137,7 +137,7 @@ $(document).ready(new function() {
 		clicklook(lookparams)
 
 		$("#glayLayer").show()
-		$("#overLayer").show().html("<img src='"+$(this).attr("src")+"' /><div id='modalright'></div>")
+		$("#overLayer").show().html("<img src='"+$(this).attr("src")+"' /><div id='modalright'><figcaption>"+$(this).next().text()+"</figcaption></div>")
 
 	});
 });

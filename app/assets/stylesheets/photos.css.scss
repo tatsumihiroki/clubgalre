@@ -424,18 +424,16 @@ header {
 	left:50%;
 	margin-top:-230px;
 	margin-left:-225px;
-	width:700px;
+	width:500px;
 	background-color:#fff;
 	img{
 		width:500px;
-		float:left;
 	}
 	#modalright{
-		width:200px;
-		height:100%;
-		float:right;
-
-
+		width:400px;
+		margin:0 auto;
+		height:100px;
+		background-color:#fff;
 	}
 }
 
