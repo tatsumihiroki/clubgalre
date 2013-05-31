@@ -4,6 +4,7 @@
 
 $icon_w: 24px;
 $icon_h: 24px;
+$img_w: 196px;
 
 
 header {
@@ -229,8 +230,7 @@ header {
 
 .move{
 	background: #ccc;
-	margin-bottom:0px;
-	width:196px;
+	width: $img_w;
 }
 
 .piceyemenu {
@@ -342,13 +342,16 @@ header {
 	}
 
 	figcaption {
+		$base_pad: 5px;
 		position: absolute;
-		bottom: -30%;
+		bottom: -50%;
 		left: 0;
-		width: 100%;
-		height: 30px;
+		padding: 0 $base_pad $base_pad;
+		width: $img_w - ($base_pad*2);
+		height: auto;
 		text-align: center;
-		line-height: 30px;
+		word-break: break-all;
+		vertical-align:baseline;
 
 		background: rgba(243, 100, 92, 0.75);
 		color: white;
