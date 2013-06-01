@@ -118,7 +118,7 @@ $(document).ready(new function() {
 
 		loadData();
 
-		$(document).on("click",".likephoto",function(e) {
+		$(document).on("click",".picmenu",function(e) {
 
 			console.log($(this));
 
@@ -126,9 +126,9 @@ $(document).ready(new function() {
 
 			clicklike(likeparams,$(this).next(),$(this))
 
-			$(this).addClass('disabled');
+			$(this).find('.likephoto').addClass('disabled');
 
-			});
+		});
 
 	$(document).on("click",".move",function(e) {
 
