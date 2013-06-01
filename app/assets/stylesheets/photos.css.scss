@@ -335,33 +335,35 @@ header {
 }
 
 .imageBox {
+
 	figure {
 		display: block;
 		position: relative;
 		overflow: hidden;
-	}
 
-	figcaption {
-		$base_pad: 5px;
-		position: absolute;
-		bottom: -50%;
-		left: 0;
-		padding: 0 $base_pad $base_pad;
-		width: $img_w - ($base_pad*2);
-		height: auto;
-		text-align: center;
-		word-break: break-all;
-		vertical-align:baseline;
+		&:hover figcaption {
+			bottom: 0%;
+		}
 
-		background: rgba(243, 100, 92, 0.75);
-		color: white;
+		figcaption {
+			$base_pad: 5px;
+			position: absolute;
+			bottom: -50%;
+			left: 0;
+			padding: 0 $base_pad $base_pad;
+			width: $img_w - ($base_pad*2);
+			height: auto;
+			text-align: center;
+			word-break: break-all;
+			vertical-align:baseline;
 
-		-webkit-transition: all 0.3s ease;
-		   -moz-transition: all 0.3s ease;
-		     -o-transition: all 0.3s ease;
-	}
-		figure:hover figcaption {
-		bottom: 0%;
+			background: rgba(243, 100, 92, 0.75);
+			color: white;
+
+			-webkit-transition: all 0.3s ease;
+			   -moz-transition: all 0.3s ease;
+			     -o-transition: all 0.3s ease;
+		}
 	}
 
 }
