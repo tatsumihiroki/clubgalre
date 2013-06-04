@@ -136,8 +136,10 @@ $(document).ready(new function() {
 
 		clicklook(lookparams)
 
+		console.log($(this).parent().parent().children('.prefecturemenu').text());
+
 		$("#glayLayer").show()
-		$("#overLayer").show().html("<img src='"+$(this).attr("src")+"' /><div id='modalright'><figcaption>"+$(this).next().text()+"</figcaption></div>")
+		$("#overLayer").show().html("<img src='"+$(this).attr("src")+"' /><div id='modalright'><figcaption>"+$(this).next().text()+"<br>"+$(this).parent().parent().children('.prefecturemenu').text()+"</figcaption></div>")
 
 	});
 });
