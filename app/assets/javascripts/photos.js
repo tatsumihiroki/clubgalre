@@ -70,7 +70,7 @@ function onLoadData(data) {
 	,	tmpl = '<% _.each(data, function(image) { %> '
 			+	'<li class="imageBox">'
 			+	'<figure class="imagemodal">'
-			+	'<img class="move" src="<%= image.avatar_file_name %>" width="200" data-pos="<%= image.id %>">'
+			+	'<img class="move" src="<%= image.avatar_file_name %>" width="200" data-pos="<%= image.id %>" data-text="<%= image.name %>" data-pref="<%= image.prefecture %>">'
 			+	'<figcaption><%= image.name %>'
 			+	'</figcaption>'
 			+	'</figure>'
@@ -114,32 +114,35 @@ $(document).ready(new function() {
 		$("#menu").toggleClass('togmenu');
 	});
 
-	$(document).bind('scroll', onScroll);
+	$(document).on('scroll', onScroll);
 
-		loadData();
+	loadData();
 
-		$(document).on("click",".picmenu",function(e) {
+	$(document).on("click",".picmenu",function(e) {
 
-			console.log($(this));
+		console.log($(this));
 
-			var likeparams=$(this).attr("data-pos");
+		var likeparams=$(this).attr("data-pos");
 
-			clicklike(likeparams,$(this).next(),$(this))
+		clicklike(likeparams,$(this).next(),$(this))
 
-			$(this).find('.likephoto').addClass('disabled');
+		$(this).find('.likephoto').addClass('disabled');
 
-		});
+	});
 
 	$(document).on("click",".move",function(e) {
 
-		var lookparams=$(this).attr("data-pos");
-
+		var $this = $(this)
+		,	lookparams = $this.attr("data-pos");
 		clicklook(lookparams)
 
-		console.log($(this).parent().parent().children('.prefecturemenu').text());
-
-		$("#glayLayer").show()
-		$("#overLayer").show().html("<img src='"+$(this).attr("src")+"' /><div id='modalright'><figcaption>"+$(this).next().text()+"<br>"+$(this).parent().parent().children('.prefecturemenu').text()+"</figcaption></div>")
+		$("#glayLayer")
+			.html('<div id="modalright">'
+				+ '<figure><img src="' + $this.attr('src') + '">'
+				+ '<figcaption>' + $this.data('text')
+				+ '<br>' + $this.data('pref')
+				+ '</figcaption></figure></div>')
+			.show();
 
 	});
 });

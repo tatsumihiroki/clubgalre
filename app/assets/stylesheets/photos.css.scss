@@ -8,6 +8,7 @@ $img_w: 196px;
 
 
 header {
+
 	h1 {
 	    margin: 10px 0 3px 0;
 	    text-align: center;
@@ -394,51 +395,51 @@ header {
 }
 
 .field{
-	margin:0 auto;
-	label{
-		text-align:center;
+	margin: 0 auto;
+	label {
+		text-align: center;
 	}
-	input{
-		width:100%;
+	input {
+		width: 100%;
 	}
-	textarea{
-		width:100%;
+	textarea {
+		width: 100%;
 	}
-	.actions input{
-		text-align:center;
+	.actions input {
+		text-align: center;
 	}
 }
 
 /* image-modal */
 
-#glayLayer{
-	display:none;
-	position:fixed;
-	top:0;
-	left:0;
-	height:100%;
-	width:100%;
-	background:black;
-	opacity: 0.60;
-	filter:alpha(opacity=60);
-}
-#overLayer{
-	display:none;
+#glayLayer {
+	display: none;
 	position: fixed;
-	top:50%;
-	left:50%;
-	margin-top:-230px;
-	margin-left:-225px;
-	width:500px;
-	background-color:#fff;
-	img{
-		width:500px;
-	}
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.6);
+	filter: alpha(opacity=60);
+
 	#modalright{
-		width:400px;
-		margin:0 auto;
-		height:100px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -230px;
+		margin-left: -225px;
+
+		width: 500px;
 		background-color:#fff;
+
+		img {
+			width: 500px;
+		}
+		figcaption {
+			margin: 0 auto;
+			height: 100px;
+			width: 400px;
+		}
 	}
 }
 
